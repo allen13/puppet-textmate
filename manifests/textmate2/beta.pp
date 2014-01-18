@@ -9,4 +9,9 @@ class textmate::textmate2::beta inherits textmate::textmate2 {
     provider => 'compressed_app',
     flavor   => 'tbz'
   }
+  file { "/Applications/TextMate.app/Contents/Resources/TextMate.icns":
+    ensure  => file,
+    replace => true,
+    source  => 'puppet:///modules/textmate/default.icns'
+  }
 }
